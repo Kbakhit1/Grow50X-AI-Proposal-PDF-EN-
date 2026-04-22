@@ -39,7 +39,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a1a2e; /* Preview Background */
+            background-color: #1a1a2e;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -47,17 +47,15 @@
             align-items: center;
         }
         
-        /* A4 Page Settings */
         .a4-page {
             width: 210mm;
             height: 297mm;
-            background-color: #05080f; /* Dark background for print */
+            background-color: #05080f;
             color: #ffffff;
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            /* Force background colors during print */
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
             page-break-after: always;
@@ -76,7 +74,6 @@
             -webkit-text-fill-color: transparent;
         }
         
-        /* Cyberpunk Grid Effect */
         .bg-cyber-grid {
             background-image: 
                 linear-gradient(rgba(38, 197, 178, 0.05) 1px, transparent 1px),
@@ -84,7 +81,6 @@
             background-size: 40px 40px;
         }
 
-        /* Floating Print Button */
         .print-btn {
             position: fixed;
             bottom: 30px;
@@ -107,57 +103,49 @@
         }
         .print-btn:hover { transform: scale(1.05); }
 
-        /* --- Magic Print CSS --- */
         @media print {
-            @page { 
-                size: A4 portrait; 
-                margin: 0; 
-            }
-            body { 
-                background-color: #05080f !important; 
-                margin: 0; 
-                padding: 0; 
-            }
-            .a4-page {
-                margin: 0;
-                box-shadow: none;
-                page-break-after: always;
-            }
+            @page { size: A4 portrait; margin: 0; }
+            body { background-color: #05080f !important; margin: 0; padding: 0; }
+            .a4-page { margin: 0; box-shadow: none; page-break-after: always; }
             .no-print { display: none !important; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Print Button -->
     <button onclick="window.print()" class="print-btn no-print">
         <i class="fa-solid fa-file-pdf"></i> Save as PDF
     </button>
 
     <!-- Page 1: Cover -->
     <div class="a4-page bg-cyber-grid p-12 justify-center items-center text-center relative border border-white/10">
-        <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-turquoise/10 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px]"></div>
+        <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-turquoise/10 rounded-full blur-[100px] z-0"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px] z-0"></div>
         
         <div class="relative z-10 w-full">
-            <div class="inline-block border border-gold/30 bg-gold/5 text-gold font-mont font-bold px-6 py-2 rounded-full mb-12 tracking-widest text-sm">
+            <div class="inline-block border border-gold/30 bg-gold/5 text-gold font-mont font-bold px-6 py-2 rounded-full mb-8 tracking-widest text-sm shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                 CONFIDENTIAL PROPOSAL
             </div>
             
-            <div class="font-mont font-black text-6xl text-white mb-8 tracking-tighter">
+            <div class="font-mont font-black text-6xl text-white mb-6 tracking-tighter">
                 Grow<span class="text-turquoise">50X</span> <span class="text-gold">AI</span>
             </div>
             
-            <h1 class="text-5xl font-extrabold font-mont text-white leading-tight mb-8">
+            <h1 class="text-5xl font-extrabold font-mont text-white leading-tight mb-6">
                 Technical & Financial Proposal<br/>
-                <span class="text-gradient text-6xl mt-4 block">For Tech Supremacy</span>
+                <span class="text-gradient text-6xl mt-4 block drop-shadow-lg">For Tech Supremacy</span>
             </h1>
             
-            <p class="text-lg text-gray-400 mb-16 max-w-xl mx-auto leading-relaxed">
+            <p class="text-lg text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
                 Stop burning your money on 10 different apps. Our system is the only platform you need to scale your business. An AI sales agent that never sleeps, an automatically filled calendar, and sales that grow 50X.
             </p>
+
+            <div class="w-full max-w-2xl mx-auto h-48 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(38,197,178,0.2)] relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Tech Dashboard" class="w-full h-full object-cover opacity-60 mix-blend-screen">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#05080f] via-transparent to-transparent"></div>
+            </div>
             
-            <div class="border-t border-white/10 pt-12 mt-12 w-1/2 mx-auto">
+            <div class="border-t border-white/10 pt-8 mt-8 w-1/2 mx-auto">
                 <p class="text-gray-500 font-mont font-bold tracking-widest">AUTOMATE THE FUTURE.</p>
             </div>
         </div>
@@ -169,35 +157,35 @@
         
         <h2 class="text-4xl font-extrabold font-mont text-gold mb-16 border-l-4 border-gold pl-6">The Problem: Subscription Chaos</h2>
         
-        <div class="bg-cardbg p-8 rounded-2xl border border-white/5 mb-16 relative overflow-hidden">
+        <div class="bg-cardbg p-8 rounded-2xl border border-white/5 mb-16 relative overflow-hidden shadow-lg">
             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-            <h3 class="text-2xl font-bold font-mont mb-8 text-white text-center">Are you paying thousands for tools that don't connect?</h3>
+            <h3 class="text-2xl font-bold font-mont mb-8 text-white text-center relative z-10">Are you paying thousands for tools that don't connect?</h3>
             
             <div class="grid grid-cols-2 gap-8 text-center relative z-10">
-                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70">
+                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70 hover:opacity-100 transition-opacity">
                     <i class="fa-solid fa-envelope-open-text text-3xl text-gray-500 mb-4"></i>
                     <h4 class="font-bold text-gray-400 line-through decoration-red-500 decoration-2">Mailchimp for Emails</h4>
                 </div>
-                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70">
+                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70 hover:opacity-100 transition-opacity">
                     <i class="fa-regular fa-calendar-check text-3xl text-gray-500 mb-4"></i>
                     <h4 class="font-bold text-gray-400 line-through decoration-red-500 decoration-2">Calendly for Booking</h4>
                 </div>
-                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70">
+                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70 hover:opacity-100 transition-opacity">
                     <i class="fa-solid fa-file-excel text-3xl text-gray-500 mb-4"></i>
                     <h4 class="font-bold text-gray-400 line-through decoration-red-500 decoration-2">Excel for CRM</h4>
                 </div>
-                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70">
+                <div class="p-6 bg-[#05080f] rounded-xl border border-red-500/20 opacity-70 hover:opacity-100 transition-opacity">
                     <i class="fa-solid fa-bolt text-3xl text-gray-500 mb-4"></i>
                     <h4 class="font-bold text-gray-400 line-through decoration-red-500 decoration-2">Zapier for Automation</h4>
                 </div>
             </div>
-            <p class="text-center mt-8 text-xl font-bold font-mont text-red-400">This chaos costs you money, and more importantly... it costs you clients!</p>
+            <p class="text-center mt-8 text-xl font-bold font-mont text-red-400 relative z-10">This chaos costs you money, and more importantly... it costs you clients!</p>
         </div>
 
         <h2 class="text-4xl font-extrabold font-mont text-turquoise mb-10 border-l-4 border-turquoise pl-6">The Solution: Grow50X AI</h2>
-        <div class="bg-gradient-to-r from-turquoise/10 to-transparent p-8 rounded-2xl border border-turquoise/20">
+        <div class="bg-gradient-to-l from-turquoise/10 to-transparent p-8 rounded-2xl border border-turquoise/20">
             <p class="text-2xl leading-relaxed text-white">
-                Get all the tools you need to dominate the market, seamlessly integrated into one dashboard, working together with superior AI to save your time and multiply your sales.
+                Get all the tools you need to dominate the market, seamlessly integrated into one dashboard, working together with superior AI to save your time and multiply your sales 50X.
             </p>
         </div>
     </div>
@@ -207,7 +195,6 @@
         <h2 class="text-4xl font-extrabold font-mont text-white mb-12 border-l-4 border-gold pl-6">The Technical Arsenal</h2>
         
         <div class="grid grid-cols-1 gap-6">
-            <!-- Feature 1 -->
             <div class="bg-cardbg p-8 rounded-2xl border border-white/5 flex gap-6 items-start">
                 <div class="w-16 h-16 shrink-0 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center text-gold text-3xl">
                     <i class="fa-solid fa-robot"></i>
@@ -218,18 +205,16 @@
                 </div>
             </div>
 
-            <!-- Feature 2 -->
             <div class="bg-cardbg p-8 rounded-2xl border border-white/5 flex gap-6 items-start">
                 <div class="w-16 h-16 shrink-0 bg-turquoise/10 border border-turquoise/20 rounded-xl flex items-center justify-center text-turquoise text-3xl">
                     <i class="fa-solid fa-phone-slash"></i>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold font-mont text-white mb-3">Never Lose a Client to a Missed Call</h3>
-                    <p class="text-gray-400 leading-relaxed">62% of clients go to competitors if you don't answer the phone. Our system detects missed calls and instantly sends a personalized SMS: "Sorry we missed your call, how can we help you?"... saving the deal automatically.</p>
+                    <h3 class="text-2xl font-bold font-mont text-white mb-3">Never Lose a Client Due to Call Volume</h3>
+                    <p class="text-gray-400 leading-relaxed">62% of clients go to competitors if you don't answer the phone. Our system automatically messages clients, books their appointments, and sends reminders... saving your sales automatically.</p>
                 </div>
             </div>
 
-            <!-- Feature 3 -->
             <div class="bg-cardbg p-8 rounded-2xl border border-white/5 flex gap-6 items-start">
                 <div class="w-16 h-16 shrink-0 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 text-3xl">
                     <i class="fa-solid fa-inbox"></i>
@@ -240,7 +225,6 @@
                 </div>
             </div>
 
-            <!-- Feature 4 -->
             <div class="bg-cardbg p-8 rounded-2xl border border-white/5 flex gap-6 items-start">
                 <div class="w-16 h-16 shrink-0 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 text-3xl">
                     <i class="fa-solid fa-filter"></i>
@@ -259,8 +243,8 @@
         <p class="text-center text-gray-400 mb-4">Transparent pricing. Built-in AI in every plan. No hidden fees.</p>
         
         <div class="text-center mb-8">
-            <span class="inline-block bg-red-500/10 border border-red-500/30 text-red-400 px-6 py-2 rounded-lg text-sm font-bold animate-pulse font-mont">
-                <i class="fa-solid fa-stopwatch mr-2"></i> Exclusive 20% Off Ends: 30/4/2026
+            <span class="inline-block bg-red-500/10 border border-red-500/30 text-red-400 px-6 py-2 rounded-lg text-sm font-bold animate-pulse font-mont shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+                <i class="fa-solid fa-stopwatch mr-2"></i> Exclusive 50% Off Ends: 30/4/2026
             </span>
         </div>
         
@@ -270,7 +254,7 @@
                 <div class="w-1/3 bg-white/5 p-6 flex flex-col justify-center items-center border-r border-white/10 text-center">
                     <h3 class="text-2xl font-bold mb-2 text-white font-mont">Starter Plan</h3>
                     <p class="text-gray-500 text-xs mb-2">For Startups & Small Clinics</p>
-                    <div class="text-gray-500 text-sm line-through decoration-red-500 decoration-2 font-mont mb-1">$57</div>
+                    <div class="text-gray-500 text-sm line-through decoration-red-500 decoration-2 font-mont mb-1">$94</div>
                     <div class="font-mont text-4xl font-black text-turquoise">$47</div>
                     <div class="text-xs text-gray-500 uppercase mt-1">/ month</div>
                 </div>
@@ -292,7 +276,7 @@
                 <div class="w-1/3 bg-gold/5 p-6 flex flex-col justify-center items-center border-r border-gold/20 text-center">
                     <h3 class="text-2xl font-bold mb-2 text-white font-mont">Pro Plan</h3>
                     <p class="text-gray-400 text-xs mb-2">For Growing Businesses</p>
-                    <div class="text-gray-400 text-sm line-through decoration-red-500 decoration-2 font-mont mb-1">$117</div>
+                    <div class="text-gray-400 text-sm line-through decoration-red-500 decoration-2 font-mont mb-1">$194</div>
                     <div class="font-mont text-5xl font-black text-gold">$97</div>
                     <div class="text-xs text-gray-400 uppercase mt-1">/ month</div>
                 </div>
@@ -300,7 +284,7 @@
                     <ul class="space-y-3 text-sm text-gray-200 w-full grid grid-cols-2 gap-x-4">
                         <li class="col-span-2 text-gold text-xs border-b border-white/10 pb-2 mb-1 font-bold">Everything in Starter, plus:</li>
                         <li><i class="fa-solid fa-check text-gold mr-2"></i><span class="text-gold font-bold">AI Chatbot (1,000 msgs)</span></li>
-                        <li><i class="fa-solid fa-check text-turquoise mr-2"></i>Google Reviews Automation</li>
+                        <li><i class="fa-solid fa-check text-turquoise mr-2"></i>Google Reviews Auto</li>
                         <li><i class="fa-solid fa-check text-turquoise mr-2"></i>Sales Funnels Builder</li>
                         <li><i class="fa-solid fa-check text-turquoise mr-2"></i>Marketing Workflows</li>
                         <li><i class="fa-solid fa-check text-turquoise mr-2"></i>5 Staff Accounts</li>
@@ -313,7 +297,7 @@
                 <div class="w-1/3 bg-white/5 p-6 flex flex-col justify-center items-center border-r border-white/10 text-center">
                     <h3 class="text-2xl font-bold mb-2 text-white font-mont">Elite Plan</h3>
                     <p class="text-gray-500 text-xs mb-2">For Agencies & Leaders</p>
-                    <div class="text-gray-500 text-sm line-through decoration-red-500 decoration-2 font-mont mb-1">$177</div>
+                    <div class="text-gray-500 text-sm line-through decoration-red-500 decoration-2 font-mont mb-1">$294</div>
                     <div class="font-mont text-4xl font-black text-turquoise">$147</div>
                     <div class="text-xs text-gray-500 uppercase mt-1">/ month</div>
                 </div>
@@ -335,35 +319,42 @@
     <div class="a4-page p-12 relative border border-white/10 bg-[#0a1122] flex flex-col justify-center items-center text-center">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         
-        <i class="fa-solid fa-mobile-screen-button text-6xl text-turquoise mb-8"></i>
+        <i class="fa-solid fa-mobile-screen-button text-6xl text-turquoise mb-8 relative z-10"></i>
         
-        <h2 class="text-4xl font-extrabold font-mont text-white mb-6">Run Your Empire From Your Pocket</h2>
-        <p class="text-xl text-gray-400 leading-relaxed mb-16 max-w-lg">
-            Don't be tied to your desk. With our mobile app, you can reply to clients, track sales, and review appointments from anywhere in the world. <br><strong class="text-gold font-normal mt-2 block">Freedom is the ultimate goal of automation.</strong>
+        <h2 class="text-4xl font-extrabold font-mont text-white mb-4 relative z-10">Run Your Empire From Your Pocket</h2>
+        <p class="text-lg text-gray-400 leading-relaxed mb-10 max-w-lg relative z-10">
+            Don't be tied to your desk. With our mobile app, you can reply to clients, track sales, and review appointments from anywhere in the world. <strong class="text-gold font-normal">Freedom is the ultimate goal of automation.</strong>
         </p>
 
-        <div class="w-full border-t border-white/10 pt-16 mt-8">
-            <h2 class="font-mont font-black text-4xl text-white mb-6">
+        <div class="w-full border-t border-white/10 pt-10 mt-2 relative z-10">
+            <h2 class="font-mont font-black text-4xl text-white mb-4">
                 Ready to multiply your growth <span class="gold-gradient">50X</span>?
             </h2>
-            <p class="text-lg text-gray-400 mb-12">
+            <p class="text-lg text-gray-400 mb-8">
                 Don't leave your clients to competitors. Own the system used by market leaders.
             </p>
             
-            <a href="https://wa.me/201035201262" target="_blank" style="text-decoration: none;" class="inline-block border-2 border-gold bg-gold/10 text-gold text-2xl font-bold py-4 px-12 rounded-xl font-mont hover:bg-gold hover:text-darkbg transition-colors duration-300">
-                <i class="fa-brands fa-whatsapp mr-2"></i> Contact Us To Activate Your Account
-            </a>
+            <div class="flex flex-col items-center justify-center gap-2">
+                <a href="https://wa.me/201035201262" target="_blank" style="text-decoration: none;" class="inline-block border-2 border-gold bg-gold/10 text-gold text-2xl font-bold py-4 px-12 rounded-xl font-mont hover:bg-gold hover:text-darkbg transition-colors duration-300 relative z-50">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Contact Us To Activate Your Account
+                </a>
+                <p class="text-gray-500 text-sm font-mont mt-2">
+                    Or click the link: <a href="https://wa.me/201035201262" target="_blank" class="text-turquoise hover:underline relative z-50">https://wa.me/201035201262</a>
+                </p>
+            </div>
         </div>
 
-        <div class="mt-auto w-full pt-8 flex flex-col gap-6">
+        <div class="mt-auto w-full pt-6 flex flex-col gap-4 relative z-10">
             <div class="flex justify-between items-center text-gray-600 text-sm font-mont font-bold tracking-wide">
                 <div>Grow<span class="text-turquoise">50X</span>.ai</div>
                 <div>&copy; 2026 All Rights Reserved</div>
                 <div>www.grow50x.ai</div>
             </div>
+            
             <div class="text-center text-gray-500 text-xs font-mont leading-relaxed border-t border-white/5 pt-4">
+                <strong class="text-gray-300 text-sm block mb-1">Grow50X.AI</strong>
                 <strong class="text-gray-400">in5 Tech</strong><br>
-                First Floor, Office HD82C<br>
+                <i class="fa-solid fa-location-dot text-turquoise mr-1"></i> First Floor, Office HD82C<br>
                 Dubai, United Arab Emirates
             </div>
         </div>
